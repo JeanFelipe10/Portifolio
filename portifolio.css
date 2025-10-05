@@ -492,9 +492,13 @@ span {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 2rem;
+    align-items: stretch; /* garante que as colunas tenham mesma altura */
 }
 
 .services-container .services-box {
+    display: flex; /* layout flex para controlar alinhamento interno */
+    flex-direction: column;
+    justify-content: flex-start;
     background: var(--text-color);
     padding: 4rem 3rem;
     border-radius: 2rem;
@@ -504,6 +508,7 @@ span {
     box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.05);
     position: relative;
     overflow: hidden;
+    min-height: 420px; /* altura mínima para consistência em desktop */
 }
 
 .services-container .services-box::before {
@@ -549,6 +554,10 @@ span {
 
 .services-content {
     margin: 2rem 0;
+    flex: 1 1 auto; /* permite que o conteúdo cresça e empurre o botão para baixo */
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
 }
 
 .services-box p {
@@ -584,11 +593,19 @@ span {
     background: var(--main-color);
     opacity: 0.9;
     transition: all 0.3s ease;
+    align-self: center; /* garante alinhamento horizontal */
 }
 
 .services-box:hover .btn {
     opacity: 1;
     transform: translateY(-0.3rem);
+}
+
+/* Ajustes específicos para telas menores: remover min-height e usar auto height */
+@media (max-width: 991px) {
+    .services-container .services-box {
+        min-height: auto;
+    }
 }
 
 /* Portfólio Section */
