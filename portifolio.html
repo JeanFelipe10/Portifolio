@@ -3,8 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfólio - Nome do Profissional</title>
+    <meta name="description" content="Portfólio de Jean Felipe - Desenvolvedor Front-End especializado em criar experiências web modernas e responsivas">
+    <meta name="keywords" content="desenvolvedor front-end, web design, desenvolvimento web, HTML, CSS, JavaScript">
+    <meta name="author" content="Jean Felipe">
+    <title>Jean Felipe | Desenvolvedor Front-End</title>
     <link rel="icon" href="image/favicon.png">
+    <!-- Preload de fontes críticas -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <!-- Link para Font Awesome para Ícones -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <!-- Link para o arquivo CSS -->
@@ -18,7 +24,7 @@
 
         <i class="fa-solid fa-bars" id="menu-icon"></i>
 
-        <nav class="navbar">
+        <nav class="navbar" role="navigation" aria-label="Menu principal">
             <a href="#home" class="active">Início</a>
             <a href="#about">Sobre</a>
             <a href="#services">Serviços</a>
@@ -31,35 +37,68 @@
     <section class="home" id="home">
         <div class="home-content">
             <h3>Olá, eu sou</h3>
-            <h1>[Jean Felipe]</h1>
-            <h3>E eu sou um <span class="multiple-text">Desenvolvedor Front-End</span></h3>
-            <p>Trabalho transformando ideias complexas em interfaces digitais elegantes e responsivas. Meu foco é na experiência do usuário e na performance.</p>
+            <h1>Jean Felipe</h1>
+            <h3>Desenvolvedor <span class="multiple-text">Front-End</span></h3>
+            <p>Especializado em transformar conceitos em experiências digitais excepcionais. 
+            Combinando design moderno com performance e usabilidade para criar interfaces que 
+            impressionam e engajam.</p>
             <div class="social-media">
-                <a href="https://www.linkedin.com/in/jean-felipe123"><i class="fa-brands fa-linkedin-in"></i></a>
-                <a href="https://github.com/JeanFelipe10"><i class="fa-brands fa-github"></i></a>
-                <a href="https://x.com/nekoulx10"><i class="fa-brands fa-x-twitter"></i></a>
-                <a href="https://www.instagram.com/jean_gj"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/jean-felipe123" target="_blank" rel="noopener noreferrer" title="LinkedIn - Jean Felipe" aria-label="Perfil no LinkedIn">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+                <a href="https://github.com/JeanFelipe10" target="_blank" rel="noopener" title="GitHub">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+                <a href="https://x.com/nekoulx10" target="_blank" rel="noopener" title="Twitter">
+                    <i class="fa-brands fa-x-twitter"></i>
+                </a>
+                <a href="https://www.instagram.com/jean_gj" target="_blank" rel="noopener" title="Instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
             </div>
         </div>
 
         <div class="home-img">
-            <!-- VERIFIQUE: O caminho deve ser 'images/perfil.jpg' se a imagem estiver na pasta 'images' -->
-            <img src="image/fotodeinicio2.jpeg" alt="Foto de Perfil">
+            <img src="image/fotodeinicio2.jpeg" alt="Jean Felipe - Desenvolvedor Front-End" loading="eager" fetchpriority="high" width="400" height="400">
         </div>
     </section>
 
     <!-- About Section Design -->
     <section class="about" id="about">
         <div class="about-img">
-            <!-- VERIFIQUE: O caminho deve ser 'images/sobre_mim.jpg' se a imagem estiver na pasta 'images' -->
-            <img src="image/foto2.jpg" alt="Foto de Perfil">
+            <img src="image/foto2.jpg" alt="Jean Felipe - Desenvolvedor Front-End" loading="lazy" width="400" height="400">
         </div>
 
         <div class="about-content">
             <h2 class="heading">Sobre <span>Mim</span></h2>
-            <h3>Desenvolvedor em progresso</h3>
-            <p>Desenvolvedor em progresso para ingressar no mercado de trabalho digital, se atualizando de novas tecnologias e conceitos. </p>
-            <a href="#" class="btn">Leia Mais</a>
+            <h3>Desenvolvedor Front-End em Constante Evolução</h3>
+            <p>Sou um desenvolvedor apaixonado por criar experiências web excepcionais. Com foco em desenvolvimento front-end,
+            estou constantemente me atualizando com as últimas tecnologias e melhores práticas do mercado.</p>
+            
+            <div class="skills-container">
+                <div class="skills-box">
+                    <h4>Tecnologias</h4>
+                    <div class="skills-list">
+                        <span>HTML5</span>
+                        <span>CSS3</span>
+                        <span>JavaScript</span>
+                        <span>React</span>
+                        <span>Git</span>
+                    </div>
+                </div>
+                
+                <div class="skills-box">
+                    <h4>Soft Skills</h4>
+                    <div class="skills-list">
+                        <span>Comunicação</span>
+                        <span>Trabalho em Equipe</span>
+                        <span>Resolução de Problemas</span>
+                        <span>Organização</span>
+                    </div>
+                </div>
+            </div>
+
+            <a href="#contact" class="btn">Entre em Contato</a>
         </div>
     </section>
 
@@ -72,24 +111,48 @@
             <div class="services-box">
                 <i class="fa-solid fa-code"></i>
                 <h3>Desenvolvimento Web</h3>
-                <p>Criação de sites e aplicações web do zero, utilizando as melhores práticas de HTML5, CSS3 e JavaScript moderno.</p>
-                <a href="../Portifolio/image/portifolio6.jpg" class="btn">Saiba Mais</a>
+                <div class="services-content">
+                    <p>Desenvolvimento de sites e aplicações web modernas com foco em performance e experiência do usuário.</p>
+                    <ul class="services-list">
+                        <li><i class="fa-solid fa-check"></i> Sites responsivos e modernos</li>
+                        <li><i class="fa-solid fa-check"></i> Aplicações web interativas</li>
+                        <li><i class="fa-solid fa-check"></i> Integração com APIs</li>
+                        <li><i class="fa-solid fa-check"></i> Otimização de performance</li>
+                    </ul>
+                </div>
+                <a href="#portifolio" class="btn">Ver Projetos</a>
             </div>
             
             <!-- Box 2: UI/UX Design -->
             <div class="services-box">
                 <i class="fa-solid fa-paintbrush"></i>
                 <h3>Design de Interface</h3>
-                <p>Desenho de interfaces de usuário focadas na experiência (UX) e visual (UI), garantindo usabilidade e estética.</p>
-                <a href="#" class="btn">Saiba Mais</a>
+                <div class="services-content">
+                    <p>Criação de interfaces modernas e intuitivas que proporcionam a melhor experiência para seus usuários.</p>
+                    <ul class="services-list">
+                        <li><i class="fa-solid fa-check"></i> Design responsivo</li>
+                        <li><i class="fa-solid fa-check"></i> Prototipagem</li>
+                        <li><i class="fa-solid fa-check"></i> Identidade visual</li>
+                        <li><i class="fa-solid fa-check"></i> Testes de usabilidade</li>
+                    </ul>
+                </div>
+                <a href="#portifolio" class="btn">Ver Projetos</a>
             </div>
 
             <!-- Box 3: Performance/SEO -->
             <div class="services-box">
-                <i class="fa-solid fa-chart-line"></i>
-                <h3>Performance & SEO</h3>
-                <p>Otimização de velocidade, acessibilidade e SEO (Search Engine Optimization) para ranqueamento em buscadores.</p>
-                <a href="#" class="btn">Saiba Mais</a>
+                <i class="fa-solid fa-rocket"></i>
+                <h3>Otimização & SEO</h3>
+                <div class="services-content">
+                    <p>Melhoria de performance e otimização para motores de busca, aumentando a visibilidade do seu site.</p>
+                    <ul class="services-list">
+                        <li><i class="fa-solid fa-check"></i> Otimização de velocidade</li>
+                        <li><i class="fa-solid fa-check"></i> SEO técnico</li>
+                        <li><i class="fa-solid fa-check"></i> Acessibilidade</li>
+                        <li><i class="fa-solid fa-check"></i> Análise de métricas</li>
+                    </ul>
+                </div>
+                <a href="#contact" class="btn">Solicitar Análise</a>
             </div>
         </div>
     </section>
