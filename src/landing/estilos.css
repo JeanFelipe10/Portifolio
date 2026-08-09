@@ -1389,7 +1389,14 @@ ol {
     gap: 36px;
   }
 
+  /*
+   * No desktop a foto fica na coluna da esquerda e o texto na direita, lado a
+   * lado. Ao virar coluna única ela caía ANTES do título, e quem rolava via a
+   * imagem sem saber de que seção era. `order` joga a foto para depois do
+   * texto sem mexer na ordem do HTML — que continua certa para leitor de tela.
+   */
   .sobre__foto {
+    order: 1;
     margin: 0 auto;
   }
 }
