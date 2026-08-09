@@ -1390,12 +1390,15 @@ ol {
   }
 
   /*
-   * A foto vem antes do texto no celular, igual à do topo. Chegamos a mover
-   * para depois do título e ficou pior na tela — as duas seções abrem com a
-   * imagem, e é essa repetição que dá ritmo à página.
+   * No celular, o "Sobre" fica só com o texto.
+   *
+   * Duas fotos suas em sequência numa tela estreita empurram o conteúdo para
+   * muito longe: a pessoa rola bastante e ainda não leu nada. A do topo já
+   * apresenta você; aqui basta o que você faz. No desktop as duas continuam,
+   * porque ali elas dividem espaço lado a lado em vez de empilhar.
    */
   .sobre__foto {
-    margin: 0 auto;
+    display: none;
   }
 }
 
