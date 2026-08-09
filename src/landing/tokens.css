@@ -1,0 +1,67 @@
+/*
+ * Tokens visuais do portfólio.
+ *
+ * A página tem identidade própria (escura, futurista) e não segue o modo
+ * claro/escuro do sistema: é uma vitrine, precisa chegar igual para todo mundo
+ * que recebe o link.
+ *
+ * As superfícies seguem o mesmo sistema das landings da JZ Tech — slate
+ * profundo em camadas, nunca preto puro. A cor de marca é a do Jean: o azul
+ * #0077B6 do portfólio antigo, esticado numa escala que funciona sobre fundo
+ * escuro.
+ */
+
+:root {
+  /* --- Marca (azul do Jean) --- */
+  --azul-claro: #38bdf8;
+  --azul: #0ea5e9;
+  --azul-escuro: #0284c7;
+  --azul-ancora: #0077b6; /* a cor original do portfólio, mantida como âncora */
+
+  /* --- Superfícies: cada uma um passo acima da anterior --- */
+  --sup-fundo: #0b1017;
+  --sup-faixa: #0f151e;
+  --sup-cartao: #141b26;
+  --sup-interno: #1a2331;
+  --sup-rodape: #080c12;
+
+  /* --- Texto sobre superfície escura --- */
+  --txt-forte: #f1f5f9;
+  --txt-medio: #cbd5e1;
+  --txt-fraco: #94a3b8;
+  --txt-apagado: #64748b;
+
+  /* --- Bordas: sempre translúcidas, para acompanhar a superfície de baixo --- */
+  --borda-sutil: rgba(255, 255, 255, 0.08);
+  --borda-media: rgba(255, 255, 255, 0.14);
+  --borda-azul: rgba(14, 165, 233, 0.35);
+
+  /* --- Cores de apoio para os mini-painéis (uma por série) --- */
+  --dado-azul: #38bdf8;
+  --dado-ciano: #22d3ee;
+  --dado-violeta: #a78bfa;
+  --dado-verde: #34d399;
+  --dado-rosa: #fb7185;
+  --dado-ambar: #fbbf24;
+
+  /* --- Movimento --- */
+  --ease-saida: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-suave: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* --- Gradiente de marca, usado em texto e destaque --- */
+  --grad-marca: linear-gradient(135deg, #38bdf8 0%, #0ea5e9 55%, #0284c7 100%);
+
+  /* --- Ritmo --- */
+  --largura-max: 1180px;
+  --raio: 16px;
+  --raio-pequeno: 10px;
+  --secao-y: 112px;
+  --secao-x: 24px;
+}
+
+@media (max-width: 900px) {
+  :root {
+    --secao-y: 72px;
+    --secao-x: 20px;
+  }
+}

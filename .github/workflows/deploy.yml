@@ -9,13 +9,27 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Instalar dependências
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      # O site virou React + Vite: o que vai para o servidor é o resultado do
+      # build (dist/), não mais o código-fonte cru.
       - name: Upload apenas dist/
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./
+          local-dir: ./dist/
           server-dir: /jean.jztech.com.br/
           exclude: |
             **/.git*

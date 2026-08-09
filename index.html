@@ -1,291 +1,37 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfólio de Jean Felipe - Desenvolvedor Front-End especializado em criar experiências web modernas e responsivas">
-    <meta name="keywords" content="desenvolvedor front-end, web design, desenvolvimento web, HTML, CSS, JavaScript">
-    <meta name="author" content="Jean Felipe">
-    <title>Jean Felipe | Desenvolvedor Front-End</title>
-    <link rel="icon" href="image/favicon.png">
-    <!-- Preload de fontes críticas -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- Link para Font Awesome para Ícones -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <!-- Link para o arquivo CSS -->
-    <link rel="stylesheet" href="portifolio.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jean Felipe — Desenvolvedor Front-End</title>
+    <meta
+      name="description"
+      content="Desenvolvedor front-end. React, JavaScript e integração com APIs em sistemas de RH, cobrança, KYC, ouvidoria, ponto e gestão de documentos."
+    />
+    <meta name="author" content="Jean Felipe" />
+    <meta name="theme-color" content="#0B1017" />
+    <link rel="icon" href="./image/favicon.png" />
 
-    <!-- Header Design -->
-    <header class="header">
-        <a href="#home" class="logo">Portifólio</a>
+    <!-- Compartilhamento em redes e WhatsApp -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Jean Felipe — Desenvolvedor Front-End" />
+    <meta
+      property="og:description"
+      content="Sistemas de verdade, no ar: RH, cobrança, KYC, ouvidoria, ponto e gestão de documentos."
+    />
+    <meta property="og:image" content="https://jean.jztech.com.br/image/fotodeinicio2.jpeg" />
+    <meta property="og:url" content="https://jean.jztech.com.br" />
+    <meta name="twitter:card" content="summary_large_image" />
 
-        <i class="fa-solid fa-bars" id="menu-icon"></i>
-
-        <nav class="navbar" role="navigation" aria-label="Menu principal">
-            <a href="#home" class="active">Início</a>
-            <a href="#about">Sobre</a>
-            <a href="#services">Serviços</a>
-            <a href="#portifolio">Portfólio</a>
-            <a href="#contact">Contato</a>
-        </nav>
-    </header>
-
-    <!-- Home Section Design -->
-    <section class="home" id="home">
-        <div class="home-content">
-            <h3>Olá, eu sou</h3>
-            <h1>Jean Felipe</h1>
-            <h3>Desenvolvedor <span class="multiple-text">Front-End</span></h3>
-            <p>Especializado em transformar conceitos em experiências digitais excepcionais. 
-            Combinando design moderno com performance e usabilidade para criar interfaces que 
-            impressionam e engajam.</p>
-            <div class="social-media">
-                <a href="https://www.linkedin.com/in/jean-felipe123" target="_blank" rel="noopener noreferrer" title="LinkedIn - Jean Felipe" aria-label="Perfil no LinkedIn">
-                    <i class="fa-brands fa-linkedin-in"></i>
-                </a>
-                <a href="https://github.com/JeanFelipe10" target="_blank" rel="noopener" title="GitHub">
-                    <i class="fa-brands fa-github"></i>
-                </a>
-                <a href="https://x.com/nekoulx10" target="_blank" rel="noopener" title="Twitter">
-                    <i class="fa-brands fa-x-twitter"></i>
-                </a>
-                <a href="https://www.instagram.com/jean_gj" target="_blank" rel="noopener" title="Instagram">
-                    <i class="fa-brands fa-instagram"></i>
-                </a>
-            </div>
-        </div>
-
-        <div class="home-img">
-            <img src="image/fotologo.jpg.png" alt="Jean Felipe - Desenvolvedor Front-End" loading="eager" width="400" height="400">
-        </div>
-    </section>
-
-    <!-- About Section Design -->
-    <section class="about" id="about">
-        <div class="about-img">
-            <img src="/image/fotodeinicio2.jpeg" alt="Jean Felipe - Desenvolvedor Front-End" loading="lazy" width="400" height="400">
-        </div>
-
-        <div class="about-content">
-            <h2 class="heading">Sobre <span>Mim</span></h2>
-            <h3>Desenvolvedor Front-End em Constante Evolução</h3>
-            <p>Sou um desenvolvedor apaixonado por criar experiências web excepcionais. Com foco em desenvolvimento front-end,
-            estou constantemente me atualizando com as últimas tecnologias e melhores práticas do mercado.</p>
-            
-            <div class="skills-container">
-                <div class="skills-box">
-                    <h4>Tecnologias</h4>
-                    <div class="skills-list">
-                        <span>HTML5</span>
-                        <span>CSS3</span>
-                        <span>JavaScript</span>
-                        <span>React</span>
-                        <span>Git</span>
-                        <span>Banco de dados SQL</span>     
-                    </div>
-                </div>
-                
-                <div class="skills-box">
-                    <h4>Soft Skills</h4>
-                    <div class="skills-list">
-                        <span>Comunicação</span>
-                        <span>Trabalho em Equipe</span>
-                        <span>Resolução de Problemas</span>
-                        <span>Organização</span>
-                    </div>
-                </div>
-            </div>
-
-            <a href="#contact" class="btn">Entre em Contato</a>
-        </div>
-    </section>
-
-    <!-- Services Section Design -->
-    <section class="services" id="services">
-        <h2 class="heading">Meus <span>Serviços</span></h2>
-
-        <div class="services-container">
-            <!-- Box 1: Web Development -->
-            <div class="services-box">
-                <i class="fa-solid fa-code"></i>
-                <h3>Desenvolvimento Web</h3>
-                <div class="services-content">
-                    <p>Desenvolvimento de sites e aplicações web modernas com foco em performance e experiência do usuário.</p>
-                    <ul class="services-list">
-                        <li><i class="fa-solid fa-check"></i> Sites responsivos e modernos</li>
-                        <li><i class="fa-solid fa-check"></i> Aplicações web interativas</li>
-                        <li><i class="fa-solid fa-check"></i> Integração com APIs</li>
-                        <li><i class="fa-solid fa-check"></i> Otimização de performance</li>
-                    </ul>
-                </div>
-                <a href="#portifolio" class="btn">Ver Projetos</a>
-            </div>
-            
-            <!-- Box 2: UI/UX Design -->
-            <div class="services-box">
-                <i class="fa-solid fa-paintbrush"></i>
-                <h3>Design de Interface</h3>
-                <div class="services-content">
-                    <p>Criação de interfaces modernas e intuitivas que proporcionam a melhor experiência para seus usuários.</p>
-                    <ul class="services-list">
-                        <li><i class="fa-solid fa-check"></i> Design responsivo</li>
-                        <li><i class="fa-solid fa-check"></i> Prototipagem</li>
-                        <li><i class="fa-solid fa-check"></i> Identidade visual</li>
-                        <li><i class="fa-solid fa-check"></i> Testes de usabilidade</li>
-                    </ul>
-                </div>
-                <a href="#portifolio" class="btn">Ver Projetos</a>
-            </div>
-
-            <!-- Box 3: Performance/SEO -->
-            <div class="services-box">
-                <i class="fa-solid fa-rocket"></i>
-                <h3>Otimização & SEO</h3>
-                <div class="services-content">
-                    <p>Melhoria de performance e otimização para motores de busca, aumentando a visibilidade do seu site.</p>
-                    <ul class="services-list">
-                        <li><i class="fa-solid fa-check"></i> Otimização de velocidade</li>
-                        <li><i class="fa-solid fa-check"></i> SEO técnico</li>
-                        <li><i class="fa-solid fa-check"></i> Acessibilidade</li>
-                        <li><i class="fa-solid fa-check"></i> Análise de métricas</li>
-                    </ul>
-                </div>
-                <a href="#contact" class="btn">Solicitar Análise</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Portifolio Section Design -->
-    <section class="portifolio" id="portifolio">
-        <h2 class="heading">Últimos <span>Projetos</span></h2>
-
-        <div class="portifolio-container">
-            <!-- Projeto 1 -->
-            <div class="portifolio-box">
-                <!-- ATENÇÃO: Corrigido o caminho da imagem de exemplo -->
-                <img src="image/portifolio3.jpg" alt="E-commerce Moderno">
-                <div class="portifolio-layer">
-                    <h4>E-commerce Moderno</h4>
-                    <p>Plataforma de vendas robusta com arquitetura de microserviços.</p>
-                    <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
-                </div>
-            </div>
-
-            <!-- Projeto 2 -->
-            <div class="portifolio-box">
-                <!-- ATENÇÃO: Corrigido o caminho da imagem de exemplo -->
-                <img src="image/portifolio2.jpg" alt="Landing Page Empresarial">
-                <div class="portifolio-layer">
-                    <h4>Landing Page Empresarial</h4>
-                    <p>Página de alta conversão para captura de leads e apresentação de serviços.</p>
-                    <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
-                </div>
-            </div>
-            
-            <!-- Projeto 3 -->
-            <div class="portifolio-box">
-                <!-- ATENÇÃO: Corrigido o caminho da imagem de exemplo -->
-                <img src="image/portifolio1.jpg" alt="Dashboard Interativo">
-                <div class="portifolio-layer">
-                    <h4>Dashboard Interativo</h4>
-                    <p>Sistema de visualização de dados em tempo real com gráficos e filtros.</p>
-                    <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section Design -->
-    <section class="contact" id="contact">
-        <h2 class="heading">Entre em <span>Contato</span></h2>
-
-        <div class="contact-methods-container">
-            <!-- Bloco 1: Email -->
-            <div class="contact-box">
-                <i class="fa-solid fa-envelope"></i>
-                <h3>Email Profissional</h3>
-                <p>Prefere contato formal? Envie um e-mail a qualquer momento.</p>
-                <!-- Substitua 'seu-email@exemplo.com' pelo seu email real -->
-                <a href="mailto:nekoulx10@gmail.com" class="btn contact-btn">Enviar E-mail</a>
-            </div>
-
-            <!-- Bloco 2: WhatsApp -->
-            <div class="contact-box">
-                <i class="fa-brands fa-whatsapp"></i>
-                <h3>WhatsApp/Celular</h3>
-                <p>Para um contato rápido e direto, utilize o meu número.</p>
-                <!-- Substitua '5511999998888' pelo seu número real no formato DDI+DDD+Número -->
-                <a href="https://wa.me/18997086342?text=Ol%C3%A1%2C+vi+seu+portf%C3%B3lio+e+gostaria+de+conversar+sobre+um+projeto." target="_blank" rel="noopener" class="btn contact-btn btn-whatsapp">
-                    Chamar no WhatsApp
-                </a>
-            </div>
-
-            <!-- Bloco 3: LinkedIn -->
-            <div class="contact-box">
-                <i class="fa-brands fa-linkedin-in"></i>
-                <h3>Conexão Profissional</h3>
-                <p>Vamos nos conectar e acompanhar as novidades do mercado.</p>
-                <!-- Substitua pelo seu perfil real do LinkedIn -->
-                <a href="https://www.linkedin.com/in/jean-felipe123" target="_blank" rel="noopener" class="btn contact-btn btn-linkedin">Conectar no LinkedIn</a>
-            </div>
-        </div>
-
-    </section>
-
-    <!-- Footer Design -->
-    <footer>
-        <div class="footer-text">
-            <p>Copyright &copy; 2025 by Jean | Todos os Direitos Reservados.</p>
-        </div>
-
-        <div class="footer-iconTop">
-            <a href="#home"><i class="fa-solid fa-angle-up"></i></a>
-        </div>
-    </footer>
-
-
-    <!-- JavaScript Section (para menu e scroll) -->
-    <script>
-        // Função para ativar o Menu Hamburguer
-        let menuIcon = document.querySelector('#menu-icon');
-        let navbar = document.querySelector('.navbar');
-
-        menuIcon.onclick = () => {
-            menuIcon.classList.toggle('fa-xmark');
-            navbar.classList.toggle('active');
-        };
-
-        // Função para destacar links e adicionar efeito sticky no Header
-        let sections = document.querySelectorAll('section');
-        let navLinks = document.querySelectorAll('header nav a');
-
-        window.onscroll = () => {
-            sections.forEach(sec => {
-                let top = window.scrollY;
-                let offset = sec.offsetTop - 150;
-                let height = sec.offsetHeight;
-                let id = sec.getAttribute('id');
-
-                if(top >= offset && top < offset + height) {
-                    navLinks.forEach(links => {
-                        links.classList.remove('active');
-                        document.querySelector('header nav a[href*=' + id + ']').classList.add('active');
-                    });
-                };
-            });
-            
-            // Sticky header
-            let header = document.querySelector('header');
-            header.classList.toggle('sticky', window.scrollY > 100);
-
-            // Remover menu hamburguer e navbar ao clicar em um link
-            menuIcon.classList.remove('fa-xmark');
-            navbar.classList.remove('active');
-        };
-    </script>
-
-</body>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>
