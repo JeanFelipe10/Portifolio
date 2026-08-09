@@ -52,7 +52,7 @@ export default function Contato() {
           <ul className="fatos">
             <li>
               <Icone nome="check" tamanho={15} />
-              Baseado em {PESSOA.cidade}, trabalho remoto sem susto
+              Baseado em {PESSOA.cidade}, trabalho remoto sem custo de deslocamento
             </li>
             <li>
               <Icone nome="check" tamanho={15} />
