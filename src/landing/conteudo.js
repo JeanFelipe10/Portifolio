@@ -248,7 +248,7 @@ export const CONTATOS = [
   {
     icone: 'email',
     titulo: 'E-mail profissional',
-    texto: 'Para proposta, escopo ou qualquer coisa que precise ficar registrada.',
+    texto: 'Para proposta, orçamento ou qualquer coisa que precise ficar registrada.',
     rotulo: 'Enviar e-mail',
     url: `mailto:${PESSOA.email}`,
     detalhe: PESSOA.email,
