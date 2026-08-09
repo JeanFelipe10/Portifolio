@@ -256,7 +256,7 @@ export const CONTATOS = [
   {
     icone: 'whatsapp',
     titulo: 'WhatsApp',
-    texto: 'Para tirar dúvida rápida e combinar uma conversa. Respondo em horário comercial.',
+    texto: 'Para tirar dúvida rápida e combinar uma conversa. Respondo todos os dias, inclusive fim de semana.',
     rotulo: 'Chamar no WhatsApp',
     url: `https://wa.me/55${PESSOA.whatsapp}?text=${encodeURIComponent(
       'Olá, vi seu portfólio e gostaria de conversar sobre um projeto.',

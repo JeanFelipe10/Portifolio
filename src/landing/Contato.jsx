@@ -56,7 +56,7 @@ export default function Contato() {
             </li>
             <li>
               <Icone nome="check" tamanho={15} />
-              Resposta em até 1 dia útil
+              Resposta em até 1 dia, incluindo fim de semana
             </li>
             <li>
               <Icone nome="check" tamanho={15} />
