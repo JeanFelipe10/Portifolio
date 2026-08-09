@@ -1216,8 +1216,15 @@ ol {
 
 /* --- Rodapé -------------------------------------------------------------- */
 
+/*
+ * Folga embaixo para o botão flutuante.
+ *
+ * O botão de voltar ao topo é fixo a 24px do fundo e o anel dele chega a 77px.
+ * Com só 44px de padding, ele ficava POR CIMA do último ícone social e roubava
+ * o clique: quem tentava abrir o Instagram voltava para o topo da página.
+ */
 .rodape {
-  padding: 44px var(--secao-x);
+  padding: 44px var(--secao-x) 96px;
   border-top: 1px solid var(--borda-sutil);
   background: var(--sup-rodape);
 }
@@ -1811,4 +1818,57 @@ ol {
   .cartao {
     padding: 24px 20px;
   }
+}
+
+/* --- Profundidade em camadas --------------------------------------------- */
+
+/*
+ * Os blocos eram retângulos de cor chapada, sem uma sombra na página inteira.
+ * Agora cada um recebe superfície em gradiente (luz caindo de cima à esquerda),
+ * um fio de realce na quina interna de cima e a sombra dupla dos tokens.
+ */
+.cartao,
+.passo,
+.numero,
+.demo__palco {
+  background: var(--sup-cartao-luz);
+  box-shadow: var(--realce-topo), var(--sombra-cartao);
+}
+
+.demo__aba {
+  background: var(--sup-cartao-luz);
+  box-shadow: var(--realce-topo), var(--sombra-tile);
+}
+
+/* Um degrau acima na escala de superfície. */
+.indicador,
+.grupo {
+  background: var(--sup-interno-luz);
+  box-shadow: var(--realce-topo), var(--sombra-tile);
+}
+
+/* A sombra entra na transição junto com o levantar que já existia. */
+.cartao,
+.passo {
+  transition:
+    transform 0.35s var(--ease-saida),
+    border-color 0.35s var(--ease-suave),
+    box-shadow 0.35s var(--ease-suave);
+}
+
+.cartao:hover,
+.passo:hover {
+  box-shadow: var(--realce-topo), var(--sombra-cartao-alta);
+}
+
+/*
+ * Precisa vir DEPOIS de `.demo__aba`: mesma especificidade, quem vence é a
+ * ordem no arquivo. A aba ativa deixa de ser um retângulo azul chapado.
+ */
+.demo__aba--ativa {
+  background: linear-gradient(168deg, rgba(14, 165, 233, 0.17), rgba(14, 165, 233, 0.05));
+  box-shadow:
+    var(--realce-topo),
+    inset 0 0 0 1px rgba(14, 165, 233, 0.16),
+    0 12px 26px -16px rgba(14, 165, 233, 0.45);
 }

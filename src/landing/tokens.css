@@ -29,7 +29,16 @@
   --txt-forte: #f1f5f9;
   --txt-medio: #cbd5e1;
   --txt-fraco: #94a3b8;
-  --txt-apagado: #64748b;
+  /*
+   * Clareado de #64748B para #8FA0B5.
+   *
+   * O valor antigo foi calibrado contra o fundo mais escuro e reprovava em cinco
+   * superfícies reais: rótulo dos indicadores (3,32:1), resumo das abas (3,54:1),
+   * a nota dos projetos (3,68:1), o "role para ver" (4,01:1) e o rodapé (4,12:1)
+   * — todos abaixo dos 4,5:1 exigidos, e nenhum deles é texto grande.
+   * Com este tom, o pior caso passa a 5,92:1.
+   */
+  --txt-apagado: #8fa0b5;
 
   /* --- Bordas: sempre translúcidas, para acompanhar a superfície de baixo --- */
   --borda-sutil: rgba(255, 255, 255, 0.08);
@@ -50,6 +59,33 @@
 
   /* --- Gradiente de marca, usado em texto e destaque --- */
   --grad-marca: linear-gradient(135deg, #38bdf8 0%, #0ea5e9 55%, #0284c7 100%);
+
+  /*
+   * --- Profundidade ---
+   *
+   * Duas sombras por bloco, como luz de verdade: uma curta e escura logo abaixo
+   * (o "contato" com a superfície, sem ela o cartão flutua sem peso) e uma larga
+   * e recuada (a ambiente, que dá o plano). Sozinhas, nenhuma das duas convence.
+   */
+  --sombra-cartao:
+    0 1px 2px rgba(0, 0, 0, 0.5),
+    0 12px 28px -12px rgba(0, 0, 0, 0.75);
+
+  --sombra-cartao-alta:
+    0 2px 4px rgba(0, 0, 0, 0.55),
+    0 26px 50px -18px rgba(0, 0, 0, 0.85),
+    0 18px 46px -22px rgba(14, 165, 233, 0.5);
+
+  --sombra-tile:
+    0 1px 2px rgba(0, 0, 0, 0.4),
+    0 10px 22px -14px rgba(0, 0, 0, 0.7);
+
+  /* Superfície com a luz caindo de cima à esquerda — nunca cor chapada. */
+  --sup-cartao-luz: linear-gradient(168deg, #1c2534 0%, #151c28 46%, #121924 100%);
+  --sup-interno-luz: linear-gradient(168deg, #1e2836 0%, #18202d 100%);
+
+  /* Fio de luz na quina de cima, por dentro: o acabamento de vidro. */
+  --realce-topo: inset 0 1px 0 rgba(255, 255, 255, 0.055);
 
   /* --- Ritmo --- */
   --largura-max: 1180px;
