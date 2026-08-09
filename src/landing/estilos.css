@@ -157,14 +157,22 @@ ol {
   transform: translateZ(0);
 }
 
+/*
+ * Clarões de fundo bem abertos e fracos.
+ *
+ * Antes eram círculos de 720px com 16% de opacidade e corte em 62% — o
+ * resultado era uma mancha com borda perceptível, que lia como borrão e não
+ * como luz. Agora são o dobro do tamanho, com metade da intensidade e o
+ * desvanecimento indo até o fim: viram atmosfera, não objeto.
+ */
 .brilho::before {
   content: '';
   position: absolute;
-  top: -20%;
-  right: -10%;
-  width: 720px;
-  height: 720px;
-  background: radial-gradient(circle, rgba(14, 165, 233, 0.16), transparent 62%);
+  top: -45%;
+  right: -25%;
+  width: 1300px;
+  height: 1300px;
+  background: radial-gradient(circle, rgba(14, 165, 233, 0.08), transparent 70%);
   /* Anda ao contrário do mouse: o fundo parece estar mais longe que a foto. */
   translate: calc(var(--px, 0) * -34px) calc(var(--py, 0) * -34px);
   transition: translate 0.7s var(--ease-suave);
@@ -173,11 +181,11 @@ ol {
 .brilho::after {
   content: '';
   position: absolute;
-  bottom: -30%;
-  left: -12%;
-  width: 620px;
-  height: 620px;
-  background: radial-gradient(circle, rgba(34, 211, 238, 0.1), transparent 60%);
+  bottom: -50%;
+  left: -28%;
+  width: 1150px;
+  height: 1150px;
+  background: radial-gradient(circle, rgba(34, 211, 238, 0.055), transparent 70%);
 }
 
 /*
@@ -652,21 +660,43 @@ ol {
   z-index: 1;
   width: 100%;
   height: 100%;
-  border-radius: 28px;
-  border: 1px solid var(--borda-media);
   object-fit: cover;
+  /*
+   * Enquadra no alto: a origem é 3:4 e a moldura é quadrada, então o corte
+   * vertical é inevitável — melhor perder a barra da camisa que o queixo.
+   */
+  object-position: 50% 20%;
+
+  /*
+   * Cantos arredondados, sem máscara oval.
+   *
+   * A elipse tirava o quadrado, mas junto levava os ombros e o corpo — apagava
+   * a pessoa para apagar a forma. Como o fundo do retrato já é quase a cor da
+   * página, arredondar os cantos e tirar a borda basta: a imagem não anuncia
+   * onde termina, e a pessoa continua inteira.
+   */
+  border-radius: 22px;
 }
 
-/* Halo luminoso, atrás e só por fora da foto. */
+/*
+ * Campo da MESMA COR do fundo da foto, estendido para fora dela.
+ *
+ * O retângulo aparecia porque o fundo do retrato (rgb 8,27,44) é diferente do
+ * fundo da página (#0B1017) — a diferença desenhava a borda. Tentar apagar o
+ * fundo da imagem falhou: a camisa é quase da mesma cor e ia junto.
+ *
+ * A saída é o inverso: derramar essa cor para fora do quadro, desvanecendo.
+ * A borda da foto passa a cair dentro de um campo idêntico ao que ela contém,
+ * e some — sem recortar nada da pessoa.
+ */
 .hero__foto::before {
   content: '';
   position: absolute;
-  inset: -22px;
+  inset: -10%;
   z-index: 0;
-  border-radius: 44px;
-  background: var(--grad-marca);
-  opacity: 0.22;
-  filter: blur(30px);
+  pointer-events: none;
+  /* Bem de leve: o suficiente para a borda não bater seca, sem virar mancha. */
+  background: radial-gradient(ellipse at 50% 46%, rgba(8, 27, 44, 0.5) 48%, rgba(8, 27, 44, 0) 74%);
 }
 
 @keyframes flutuar {
@@ -845,15 +875,15 @@ ol {
  */
 .sobre {
   display: grid;
-  grid-template-columns: 300px 1fr;
+  grid-template-columns: 360px 1fr;
   align-items: center;
   gap: 56px;
 }
 
 .sobre__foto {
   position: relative;
-  width: 300px;
-  height: 375px;
+  width: 360px;
+  height: 450px;
   align-self: center;
 }
 
@@ -870,28 +900,21 @@ ol {
   position: relative;
   z-index: 1;
   display: block;
-  width: 300px;
-  height: 375px;
-  border: 1px solid var(--borda-media);
-  border-radius: 24px;
+  width: 360px;
+  height: 450px;
   object-fit: cover;
+  /* Mesmo acabamento da foto do topo: canto arredondado e nada de borda. */
+  border-radius: 22px;
 }
 
-/*
- * Brilho atrás, no mesmo acabamento da foto do topo.
- *
- * `z-index: 0` e não `-1`: com valor negativo ele iria parar atrás do fundo da
- * própria seção, que é opaco, e sumiria.
- */
+/* Mesmo campo de cor da foto do topo, para a borda desaparecer aqui também. */
 .sobre__foto::before {
   content: '';
   position: absolute;
-  inset: -18px;
+  inset: -10%;
   z-index: 0;
-  border-radius: 36px;
-  background: var(--grad-marca);
-  opacity: 0.14;
-  filter: blur(28px);
+  pointer-events: none;
+  background: radial-gradient(ellipse at 50% 50%, rgba(7, 28, 46, 0.5) 50%, rgba(7, 28, 46, 0) 76%);
 }
 
 .sobre__titulo {

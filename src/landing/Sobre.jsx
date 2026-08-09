@@ -9,10 +9,10 @@ export default function Sobre() {
       <div ref={ref} className="sobre limite revelar">
         <div className="sobre__foto">
           <img
-            src="./image/jean.jpeg"
+            src="./image/jean-sobre.jpg"
             alt={PESSOA.nome}
-            width="897"
-            height="1120"
+            width="640"
+            height="853"
             loading="lazy"
           />
         </div>

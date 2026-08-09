@@ -109,7 +109,7 @@ export default function Hero() {
 
         <div className="hero__foto">
           <img
-            src="./image/fotodeinicio2.jpeg"
+            src="./image/jean-perfil.jpg"
             alt={`${PESSOA.nome}, desenvolvedor front-end`}
             width="360"
             height="360"
