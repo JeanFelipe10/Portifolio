@@ -1,68 +1,41 @@
 import Icone from './Icone';
-import { CONTATOS, PESSOA } from './conteudo';
-import { useLuz, useRevelar } from './hooks';
+import { CONTATOS } from './conteudo';
+import { useRevelar } from './hooks';
 
+/** Um fechamento só: o WhatsApp em destaque, e-mail e LinkedIn como alternativas. */
 export default function Contato() {
   const ref = useRevelar();
-  const luz = useLuz();
+  const zap = CONTATOS.find((c) => c.icone === 'whatsapp');
+  const outros = CONTATOS.filter((c) => c.icone !== 'whatsapp');
 
   return (
     <section id="contato" className="secao secao--faixa">
       <div ref={ref} className="limite revelar">
-        <header className="cabecalho">
-          <span className="sobretitulo">Contato</span>
-          <h2 className="titulo-secao">
-            Vamos <span className="destaque">conversar</span>
-          </h2>
-          <p className="apoio">
-            Cada canal serve para uma coisa. Escolhe o que combina com o seu assunto.
+        <div className="fechamento">
+          <p className="fechamento__status">
+            <span className="ponto-vivo" aria-hidden="true" />
+            Disponível para novos projetos
           </p>
-        </header>
+          <h2 className="titulo-secao">Vamos conversar sobre o seu projeto.</h2>
 
-        <div className="grade-3" ref={luz}>
-          {CONTATOS.map((c) => (
-            <article key={c.titulo} className="cartao contato__box">
-              <div className="contato__icone">
-                <Icone nome={c.icone} tamanho={24} />
-              </div>
-              <h3 className="contato__titulo">{c.titulo}</h3>
-              <p className="contato__texto">{c.texto}</p>
+          <a className="btn btn--principal fechamento__zap" href={zap.url} target="_blank" rel="noopener noreferrer">
+            <Icone nome="whatsapp" tamanho={20} />
+            Chamar no WhatsApp
+          </a>
+
+          <div className="fechamento__outros">
+            {outros.map((c) => (
               <a
+                key={c.titulo}
                 href={c.url}
-                className="btn btn--secundario"
                 target={c.url.startsWith('mailto:') ? undefined : '_blank'}
                 rel="noopener noreferrer"
               >
-                {c.rotulo}
+                <Icone nome={c.icone} tamanho={16} />
+                {c.detalhe}
               </a>
-            </article>
-          ))}
-        </div>
-
-        {/* Bloco de disponibilidade — informação, não mais um botão repetido. */}
-        <div className="chamada">
-          <span className="sobretitulo">
-            <span className="ponto-vivo" aria-hidden="true" />
-            Disponível para novos projetos
-          </span>
-          <h3 className="titulo-secao" style={{ fontSize: 'clamp(1.5rem, 3vw, 2rem)' }}>
-            Trabalho como PJ, em <span className="destaque">projeto fechado ou por período</span>
-          </h3>
-
-          <ul className="fatos">
-            <li>
-              <Icone nome="check" tamanho={15} />
-              Baseado em {PESSOA.cidade}, trabalho remoto sem custo de deslocamento
-            </li>
-            <li>
-              <Icone nome="check" tamanho={15} />
-              Resposta em até 1 dia, incluindo fim de semana
-            </li>
-            <li>
-              <Icone nome="check" tamanho={15} />
-              Código comentado e documentado para quem pegar depois
-            </li>
-          </ul>
+            ))}
+          </div>
         </div>
       </div>
     </section>

@@ -18,7 +18,6 @@ export default function Sobre() {
         </div>
 
         <div>
-          <span className="sobretitulo">Sobre mim</span>
           <h2 className="sobre__titulo">{SOBRE.titulo}</h2>
           {SOBRE.paragrafos.map((p) => (
             <p key={p.slice(0, 24)} className="sobre__texto">

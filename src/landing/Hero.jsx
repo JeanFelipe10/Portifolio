@@ -1,16 +1,14 @@
 import Icone from './Icone';
 import { NUMEROS, PAPEIS, PESSOA, REDES } from './conteudo';
-import { rolarAte, useContador, useDigitando, useParalaxe } from './hooks';
+import { rolarAte, useDigitando, useParalaxe } from './hooks';
 
-/** Número do topo, contando de zero até o valor quando entra na tela. */
+/** Número do topo: já aparece pronto — contador que sobe de zero parece truque. */
 function Numero({ dado }) {
-  const [valor, ref] = useContador(dado.alvo, 1400);
-
   return (
-    <div ref={ref} className="numero">
+    <div className="numero">
       <p className="numero__valor">
         {dado.prefixo ?? ''}
-        {Math.round(valor)}
+        {dado.alvo}
         {dado.sufixo ?? ''}
       </p>
       <p className="numero__rotulo">{dado.rotulo}</p>
@@ -38,10 +36,6 @@ export default function Hero() {
 
       <div className="hero limite">
         <div className="hero__texto-bloco">
-          <p className="hero__saudacao entra" style={{ '--atraso': '0ms' }}>
-            <span className="ponto-vivo" aria-hidden="true" />
-            {PESSOA.saudacao}
-          </p>
           <h1 className="hero__nome" aria-label={PESSOA.nome}>
             {letras.map((letra, i) => (
               <span
@@ -113,7 +107,7 @@ export default function Hero() {
             alt={`${PESSOA.nome}, desenvolvedor front-end`}
             width="360"
             height="360"
-            fetchPriority="high"
+            fetchpriority="high"
           />
         </div>
       </div>

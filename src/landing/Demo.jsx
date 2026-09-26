@@ -39,9 +39,8 @@ export default function Demo() {
     <section id="demo" className="secao">
       <div ref={ref} className="limite revelar">
         <header className="cabecalho">
-          <span className="sobretitulo">Demonstração</span>
           <h2 className="titulo-secao">
-            Escolhe um sistema e <span className="destaque">vê por dentro</span>
+            Escolhe um sistema e vê por dentro
           </h2>
           <p className="apoio">
             Painéis desenhados em código, com números de exemplo. Clica num nome para trocar.

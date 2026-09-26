@@ -82,7 +82,7 @@ export default function App() {
       name: PESSOA.nome,
       jobTitle: PESSOA.papel,
       email: `mailto:${PESSOA.email}`,
-      url: 'https://jean-felipe.vercel.app',
+      url: 'https://jean.jztech.com.br',
       address: { '@type': 'PostalAddress', addressLocality: PESSOA.cidade },
       sameAs: REDES.map((r) => r.url),
     }),

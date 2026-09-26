@@ -340,7 +340,7 @@ ol {
 .btn--principal {
   background: var(--azul);
   color: #04121c;
-  box-shadow: 0 10px 30px rgba(14, 165, 233, 0.28);
+  box-shadow: none;
 }
 
 .btn--principal:hover {
@@ -1280,7 +1280,7 @@ ol {
   background: var(--azul);
   color: #04121c;
   cursor: pointer;
-  box-shadow: 0 10px 30px rgba(14, 165, 233, 0.34);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
   opacity: 0;
   transform: translateY(14px);
   pointer-events: none;
@@ -1324,7 +1324,7 @@ ol {
 
 .ao-topo__linha {
   stroke: var(--azul-claro);
-  filter: drop-shadow(0 0 4px rgba(56, 189, 248, 0.7));
+
 }
 
 .ao-topo svg:not(.ao-topo__anel) {
@@ -1902,4 +1902,123 @@ ol {
     var(--realce-topo),
     inset 0 0 0 1px rgba(14, 165, 233, 0.16),
     0 12px 26px -16px rgba(14, 165, 233, 0.45);
+}
+
+/* --- Serviços em linhas (em vez de três cartões iguais) ------------------- */
+.servicos {
+  display: grid;
+  border-top: 1px solid var(--borda-sutil);
+}
+.servico {
+  display: grid;
+  grid-template-columns: minmax(220px, 1fr) minmax(0, 1.3fr) minmax(0, 1.2fr);
+  gap: 28px;
+  align-items: start;
+  padding: 30px 8px;
+  border-bottom: 1px solid var(--borda-sutil);
+  transition: background 0.3s ease;
+}
+.servico:hover { background: rgba(14, 165, 233, 0.04); }
+.servico__cabeca { display: flex; align-items: center; gap: 14px; }
+.servico__cabeca .servico__icone { margin-bottom: 0; flex: none; }
+.servico__cabeca .servico__titulo { margin-bottom: 0; }
+.servico .lista { margin-top: 0; }
+@media (max-width: 860px) {
+  .servico { grid-template-columns: 1fr; gap: 14px; padding: 24px 4px; }
+}
+
+/* --- Projeto em destaque --------------------------------------------------- */
+.destaque-proj {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+  margin-bottom: 28px;
+  overflow: hidden;
+  border: 1px solid var(--borda-azul);
+  border-radius: 20px;
+  background: var(--sup-cartao);
+}
+.destaque-proj__imagem { display: block; overflow: hidden; background: #05070c; }
+.destaque-proj__imagem img {
+  display: block; width: 100%; height: 100%; object-fit: cover; object-position: center;
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.destaque-proj__imagem:hover img { transform: scale(1.03); }
+.destaque-proj__corpo { display: flex; flex-direction: column; gap: 10px; padding: 32px; }
+.destaque-proj__selo {
+  display: inline-flex; align-items: center; gap: 8px; align-self: flex-start;
+  color: var(--azul-claro); font-size: 0.8rem; font-weight: 600;
+}
+.destaque-proj__corpo .projeto__nome { font-size: 1.6rem; }
+.destaque-proj__botao { align-self: flex-start; margin-top: 8px; display: inline-flex; align-items: center; gap: 8px; }
+@media (max-width: 900px) {
+  .destaque-proj { grid-template-columns: 1fr; }
+  .destaque-proj__corpo { padding: 24px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .destaque-proj__imagem:hover img { transform: none; }
+}
+
+/* área de toque confortável no celular para o link da JZ Tech */
+.rodape__link { display: inline-block; padding: 10px 2px; margin: -10px 0; }
+
+/* --- Link "ver página do produto" nos cartões de projeto ------------------ */
+.projeto__link {
+  align-self: flex-start;
+  display: inline-flex; align-items: center; gap: 6px;
+  margin-top: 14px; padding: 8px 0;
+  color: var(--azul-claro); font-size: 0.9rem; font-weight: 600; text-decoration: none;
+}
+.projeto__link svg { transition: transform 0.25s ease; }
+.projeto__link:hover { text-decoration: underline; text-underline-offset: 4px; }
+.projeto__link:hover svg { transform: translate(2px, -2px); }
+
+/* --- Contato: um fechamento só ------------------------------------------- */
+.fechamento { max-width: 44rem; margin: 0 auto; text-align: center; display: grid; justify-items: center; gap: 16px; }
+.fechamento__status { display: inline-flex; align-items: center; gap: 8px; color: var(--azul-claro); font-size: 0.85rem; font-weight: 600; }
+.fechamento .apoio { margin: 0; }
+.fechamento__zap { margin-top: 10px; display: inline-flex; align-items: center; gap: 10px; padding: 16px 28px; font-size: 1.02rem; }
+.fechamento__outros { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 24px; margin-top: 6px; }
+.fechamento__outros a {
+  display: inline-flex; align-items: center; gap: 8px; padding: 8px 2px;
+  color: var(--txt-fraco); font-size: 0.95rem; text-decoration: none; transition: color 0.2s ease;
+}
+.fechamento__outros a:hover { color: var(--txt-forte); }
+
+/* --- Traço embaixo no hover: menu e contatos do fechamento ---------------- */
+.nav__link::after {
+  content: '';
+  position: absolute;
+  left: 14px;
+  right: 14px;
+  bottom: 2px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--grad-marca);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s var(--ease-suave);
+}
+.nav__link:hover::after,
+.nav__link--ativo::after { transform: scaleX(1); }
+.nav__link:hover { color: var(--txt-forte); background: rgba(255, 255, 255, 0.04); }
+
+.fechamento__outros a { position: relative; }
+.fechamento__outros a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 2px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--grad-marca);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s var(--ease-suave);
+}
+.fechamento__outros a:hover::after { transform: scaleX(1); }
+.fechamento__outros a:hover { color: var(--azul-claro); }
+
+@media (prefers-reduced-motion: reduce) {
+  .nav__link::after, .fechamento__outros a::after { transition: none; }
 }

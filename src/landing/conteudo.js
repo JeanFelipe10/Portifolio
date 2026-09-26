@@ -8,11 +8,10 @@
 export const PESSOA = {
   nome: 'Jean Felipe',
   papel: 'Desenvolvedor Front-End',
-  saudacao: 'Olá, eu sou',
   resumo:
     'Construo em React as telas de sistemas que rodam em produção — de gestão de pessoas a cobrança e verificação de identidade. Integro com a API, publico em nuvem e entrego tela que funciona igual no computador e no celular.',
   email: 'nekoulx10@gmail.com',
-  whatsapp: '18997086342',
+  whatsapp: '18998118056',
   cidade: 'Maringá, PR',
 };
 
@@ -25,11 +24,10 @@ export const EMPRESA = {
 };
 
 export const LINKS = [
-  { id: 'inicio', rotulo: 'Início' },
   { id: 'sobre', rotulo: 'Sobre' },
   { id: 'servicos', rotulo: 'Serviços' },
   { id: 'projetos', rotulo: 'Projetos' },
-  { id: 'demo', rotulo: 'Demonstração' },
+  { id: 'demo', rotulo: 'Por dentro' },
   { id: 'contato', rotulo: 'Contato' },
 ];
 
@@ -54,11 +52,11 @@ export const NUMEROS = [
   { alvo: 6, rotulo: 'sistemas em que trabalhei' },
   { alvo: 30, prefixo: '+', rotulo: 'telas entregues' },
   { alvo: 4, rotulo: 'papéis de acesso por sistema' },
-  { alvo: 100, sufixo: '%', rotulo: 'responsivo e acessível' },
+  { alvo: 3, rotulo: 'landings de produto no ar' },
 ];
 
 export const SOBRE = {
-  titulo: 'Desenvolvedor front-end em constante evolução',
+  titulo: 'Faço telas que gente usa todo dia, de RH a pedido no WhatsApp.',
   paragrafos: [
     'Trabalho com produtos que têm usuário do outro lado: sistemas multi-empresa, com papéis diferentes vendo telas diferentes, e regra de negócio que não pode falhar.',
     'No dia a dia é React e JavaScript na interface, consumo de API em PHP, banco SQL e deploy em nuvem. Gosto de tela que carrega rápido, se ajusta a qualquer tamanho de tela e não deixa ninguém perdido.',
@@ -70,7 +68,7 @@ export const SOBRE = {
     },
     {
       titulo: 'Como eu trabalho',
-      itens: ['Comunicação', 'Trabalho em equipe', 'Resolução de problemas', 'Organização'],
+      itens: ['Código comentado e documentado', 'Testo no celular antes de entregar', 'Deploy automático', 'Mostro o antes e o depois'],
     },
   ],
 };
@@ -112,6 +110,18 @@ export const SERVICOS = [
   },
 ];
 
+/** Projeto em destaque: o mais novo e o que mais mostra de front-end. */
+export const DESTAQUE = {
+  nome: 'JZ Tech IA',
+  resumo: 'Landing de produto com animação 3D',
+  texto:
+    'Página de apresentação das soluções de IA da JZ Tech. A abertura é uma cena de partículas em WebGL, sem biblioteca, que se transforma no logo, num relógio e numa lista resolvida conforme a rolagem. Tem demonstração animada de um pedido no WhatsApp, carrossel automático e menu próprio para celular.',
+  papel: 'Tudo: roteiro da página, design, animações, textos e publicação.',
+  stack: ['WebGL', 'JavaScript', 'CSS', 'GKE'],
+  url: 'https://jztech.com.br/ia/',
+  imagem: './image/jztech-ia.jpg',
+};
+
 /** Como o trabalho anda, do primeiro papo até o site no ar. */
 export const PROCESSO = [
   {
@@ -152,6 +162,7 @@ export const PROJETOS = [
       'Sistema de gestão de RH multi-empresa: colaboradores, treinamento, PDI, advertências, clima, recrutamento, onboarding e movimentação — cada papel enxergando só o que lhe cabe.',
     papel: 'Telas de RH, gestor, liderança e colaborador; landing pública do produto.',
     stack: ['React', 'MUI', 'PHP', 'MySQL', 'Docker', 'GKE'],
+    url: 'https://click-rh.jztech.com.br/home',
   },
   {
     id: 'cobrarapido',
@@ -162,6 +173,7 @@ export const PROJETOS = [
       'Plataforma de cobrança e recuperação de crédito: régua de contato, acompanhamento de acordos e visão do que entrou no período.',
     papel: 'Painel de acompanhamento e telas de negociação.',
     stack: ['React', 'PHP', 'MySQL', 'GKE'],
+    url: 'https://cobrafacil.jztech.com.br/home',
   },
   {
     id: 'kyc',
@@ -172,6 +184,7 @@ export const PROJETOS = [
       'Verificação de identidade ponta a ponta: biometria facial, prova de vida contra fraude e assinatura de documento, tudo atrás de um gateway próprio.',
     papel: 'Fluxo de captura no navegador e painel de conferência.',
     stack: ['React', 'PHP', 'Biometria', 'Docker'],
+    url: 'https://jztechkyc.jztech.com.br/home',
   },
   {
     id: 'ouvidoria',
@@ -182,6 +195,7 @@ export const PROJETOS = [
       'Canal de ética e denúncias white-label: protocolo anônimo, acompanhamento pelo denunciante e triagem pelo comitê, com a marca de cada empresa.',
     papel: 'Abertura de protocolo, acompanhamento e triagem.',
     stack: ['React', 'PHP', 'MySQL', 'GKE'],
+    url: 'https://ouvidoria.jztech.com.br/home',
   },
   {
     id: 'ponto',
@@ -192,6 +206,7 @@ export const PROJETOS = [
       'Controle de ponto com marcação pelo celular, espelho do mês, tratamento de inconsistência e fechamento para a folha.',
     papel: 'Marcação no celular e espelho de horas.',
     stack: ['React', 'PHP', 'MySQL'],
+    url: 'https://pontocheck.jztech.com.br/home',
   },
   {
     id: 'zeropapel',
@@ -202,6 +217,7 @@ export const PROJETOS = [
       'Digitalização e guarda de documentos na nuvem: upload, indexação, busca e ciclo de vida do arquivo, tirando o papel do armário.',
     papel: 'Envio, busca e organização do acervo.',
     stack: ['React', 'PHP', 'Google Cloud'],
+    url: 'https://zero-papel.jztech.com.br/home',
   },
 ];
 
@@ -261,7 +277,7 @@ export const CONTATOS = [
     url: `https://wa.me/55${PESSOA.whatsapp}?text=${encodeURIComponent(
       'Olá, vi seu portfólio e gostaria de conversar sobre um projeto.',
     )}`,
-    detalhe: '(18) 99708-6342',
+    detalhe: '(18) 99811-8056',
   },
   {
     icone: 'linkedin',
